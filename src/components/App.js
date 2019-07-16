@@ -9,8 +9,13 @@ class App extends React.Component {
     state = { videos: [], selectedVideo: null };
 
     onClickSubmit = async (searchItem) => {
+        let KEY = 'AIzaSyBgCTY8pFd2wYQsrM__kBs6hGRxE5hpdtA';
+        
         const response = await youtube.get('/search', {
             params: {
+                part: 'snippet',
+                maxResults: 50,
+                key: KEY,
                 q: searchItem
             }
         });
