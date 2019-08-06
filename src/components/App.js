@@ -3,14 +3,18 @@ import SearchBar from './SearchBar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+import logo from '../img/logo.svg';
 
 class App extends React.Component {
 
-    state = { videos: [], selectedVideo: null };
+    state = {
+        videos: [],
+        selectedVideo: null
+    };
 
     onClickSubmit = async (searchItem) => {
         let KEY = 'AIzaSyBgCTY8pFd2wYQsrM__kBs6hGRxE5hpdtA';
-        
+
         const response = await youtube.get('/search', {
             params: {
                 part: 'snippet',
@@ -33,15 +37,22 @@ class App extends React.Component {
     render() {
         return (
             <div className="app">
-                {/* reference to the Searchbar */}
+                <div className="nav-wrap">
+                    <div className="nav-container">
+                        <img src={logo} alt="logo" width="46" height="46"/>
+                        <h1>Videofolio</h1>
+                    </div>
+                </div>
                 <SearchBar onClickSubmit={this.onClickSubmit} />
 
+                {(this.state.videos.length > 0) && (
                     <div className="video-main">
                         {/* The selected video detail is being displayed */}
                         <VideoDetail video={this.state.selectedVideo} />
                         {/* In reference to videoList to display the list of videos */}
                         <VideoList selectedVideo={this.selectedVideo} videos={this.state.videos} />
                     </div>
+                )}
                 </div>
         );
     }
