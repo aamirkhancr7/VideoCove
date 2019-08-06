@@ -24,6 +24,7 @@ class SearchBar extends React.Component {
                         type="text"
                         value={this.state.searchItem}
                         onChange={this.inputChange}
+                        placeholder="Enter search term.."
                         autoFocus
                     />
                 </form>
