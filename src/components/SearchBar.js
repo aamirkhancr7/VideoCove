@@ -1,4 +1,5 @@
 import React from 'react';
+import arrow from '../img/arrow.svg';
 
 class SearchBar extends React.Component {
 
@@ -19,7 +20,12 @@ class SearchBar extends React.Component {
         return (
             <div className="search-bar">
                 <form onSubmit={this.onTermSubmit} className="search-form">
-                    <label><h3>Search Video</h3></label>
+                    <div class="search-label">
+                        <div className="search-title">
+                            <h4>Search Video</h4>
+                        </div>
+                        <img class="arrow-down" src={arrow} alt="arrow" width="40" height="40"/>
+                    </div>
                     <input
                         type="text"
                         value={this.state.searchItem}
