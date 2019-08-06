@@ -1,10 +1,43 @@
+:root {
+    font-size: 100%;
+}
+
 body {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    background: url('../img/hero.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
 }
 
 .app {
     margin: auto;
     max-width: 1200px;
+}
+
+.nav-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container {
+    background: #fff;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px 20px 15px 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container > h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.8rem;
+    color: #434053;
+    margin: 0 0 0 10px;
 }
 
 .search-bar {
@@ -17,17 +50,31 @@ body {
     width: 1200px;
 }
 
-.search-form > label {
-    margin: 20px 0 0 0;
+.search-label {
+    margin: 50px 0 10px 0;
+    display: flex;
+}
+
+.search-title {
     color: #fff;
+    background: #6c63fe;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    margin: 0 15px 0 0;
+}
+
+.arrow-down {
+    position: relative;
+    top: 15px;
 }
 
 .search-form > input {
     width: 100%;
-    padding: 10px;
-    border: 0.5px solid #2c2c2c;
+    padding: 13px 20px 13px 20px;
+    border: 0;
     border-radius: 10px;
     margin: 15px 0 20px 0;
+    box-shadow: 15px 5px 20px rgba(0, 0, 0, 0.19), 20px 15px 20px rgba(0, 0, 0, 0.158);
 }
 
 .search-form > input:focus {
@@ -45,7 +92,12 @@ body {
 }
 
 .video-list {
-    flex: 1 1 0;
+    flex: 1 1 60px;
+    height: 72vh;
+    overflow: auto;
+    background: #fff;
+    padding: 5px;
+    border-radius: 6px;
 }
 
 .video-item {
@@ -57,7 +109,7 @@ body {
 .video-item-title {
     margin: 10px 0 10px 0;
     font-weight: bold;
-    color: #fff;
+    color: #000;
 }
 
 @media (max-width: 1250px) {
@@ -109,6 +161,7 @@ body {
 
     .video-list {
         flex: 1 1 0;
+        padding: 15px 5px 5px 5px;
     }
 
     .video-description {
